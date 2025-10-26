@@ -1144,8 +1144,7 @@ function exportStudentReport() {
   const logoImg = new Image();
   logoImg.src = "./img/logo.jpg";
 
-  // إضافة اللوجو للـ PDF (مربع 16x16)
-  doc.addImage(logoImg, "JPEG", 10, 8, 24, 24);
+  doc.addImage(logoImg, "JPEG", 10, 4, 35, 35);
 
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(24);
@@ -1293,28 +1292,28 @@ function exportStudentReport() {
   y += 45;
 
   // ===== STUDENT INFO =====
-  doc.setFontSize(14);
-  doc.setFont(undefined, "bold");
-  doc.setTextColor(1, 15, 60);
-  doc.text("Student Information", 14, y);
-  y += 8;
+  // doc.setFontSize(14);
+  // doc.setFont(undefined, "bold");
+  // doc.setTextColor(1, 15, 60);
+  // doc.text("Student Information", 14, y);
+  // y += 8;
 
-  doc.autoTable({
-    startY: y,
-    head: [["Field", "Value"]],
-    body: [
-      ["Name", student.name],
-      ["Email", student.email || "Not provided"],
-      ["Phone", student.phone || "Not provided"],
-      ["GitHub", student.github || "Not provided"],
-    ],
-    theme: "grid",
-    headStyles: { fillColor: [1, 15, 60], textColor: 255, fontStyle: "bold" },
-    styles: { fontSize: 10, cellPadding: 3, textColor: [52, 73, 94] },
-    alternateRowStyles: { fillColor: [245, 247, 250] },
-  });
+  // doc.autoTable({
+  //   startY: y,
+  //   head: [["Field", "Value"]],
+  //   body: [
+  //     ["Name", student.name],
+  //     ["Email", student.email || "Not provided"],
+  //     ["Phone", student.phone || "Not provided"],
+  //     ["GitHub", student.github || "Not provided"],
+  //   ],
+  //   theme: "grid",
+  //   headStyles: { fillColor: [1, 15, 60], textColor: 255, fontStyle: "bold" },
+  //   styles: { fontSize: 10, cellPadding: 3, textColor: [52, 73, 94] },
+  //   alternateRowStyles: { fillColor: [245, 247, 250] },
+  // });
 
-  y = doc.lastAutoTable.finalY + 15;
+  // y = doc.lastAutoTable.finalY + 15;
 
   // ===== MONTHLY REVIEWS =====
   doc.setFontSize(14);
